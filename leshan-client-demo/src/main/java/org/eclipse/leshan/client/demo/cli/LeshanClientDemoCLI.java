@@ -265,6 +265,16 @@ public class LeshanClientDemoCLI implements Runnable {
     @ArgGroup(exclusive = true)
     public IdentitySection identity = new IdentitySection();
 
+    /* ********************************** OSCORE Section ******************************** */
+    @ArgGroup(exclusive = false,
+              heading = "%n@|bold,underline OSCORE Options|@ %n%n"//
+                      + "@|italic " //
+                      + "By default Leshan demo does not use OSCORE.%n"//
+                      + "|@" + "@|red, OSCORE implementation in Leshan is in an experimental state.|@%n" //
+                      + "%n")
+
+    public OscoreSection oscore = new OscoreSection();
+
     @Spec
     CommandSpec spec;
 
